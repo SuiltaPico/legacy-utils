@@ -1,0 +1,40 @@
+{
+  "name": "utils",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.10.0",
+    "@ffmpeg/ffmpeg": "^0.10.1",
+    "@quasar/extras": "^1.14.0",
+    "@vue3-oop/vite-plugin-monaco-editor": "^1.1.2",
+    "@vueuse/core": "^8.6.0",
+    "audiobuffer-to-wav": "^1.0.0",
+    "echarts": "^5.3.2",
+    "error-stack-parser": "^2.0.7",
+    "localforage": "^1.10.0",
+    "monaco-editor": "^0.33.0",
+    "p5": "^1.4.1",
+    "pug": "^3.0.2",
+    "pyodide": "^0.20.0",
+    "quasar": "^2.7.1",
+    "sortablejs": "^1.15.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^1.0.10",
+    "@types/audiobuffer-to-wav": "^1.0.2",
+    "@types/p5": "^1.4.2",
+    "@types/sortablejs": "^1.13.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "sass": "^1.32.0",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.9",
+    "vue-tsc": "^0.34.7"
+  }
+}
