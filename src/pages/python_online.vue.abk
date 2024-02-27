@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useLocalStorage } from "@vueuse/core";
+// @ts-ignore
 import type { PyodideInterface } from "pyodide/api";
 import { loadPyodide } from "pyodide/pyodide";
 import { onMounted, ref, watch } from "vue";
@@ -54,9 +55,9 @@ function run() {
   running.value = true;
   info.value = "解析模块导入";
 
-  pyodide.loadPackagesFromImports(code, (msg) => {
+  pyodide.loadPackagesFromImports(code, (msg: any) => {
     info.value = msg.replaceAll("Loading ", "加载模块：");
-  }, (msg) => {
+  }, (msg: any) => {
     info.value = msg;
   }).then(async () => {
     if (!pyodide || !program_out_el.value) { return }
@@ -113,7 +114,7 @@ function show_installed_packages() {
     `import micropip
 str(micropip.list())
 `
-  ).then((res) => {
+  ).then((res: any) => {
     loading_installed_packages.value = false;
     installed_packages.value = res;
   });
@@ -138,7 +139,7 @@ await micropip.install("${pypi_module_name.value}")
     .then(() => {
       info.value = "";
     })
-    .catch((e) => {
+    .catch((e: any) => {
       program_out_el.value!.innerHTML = "<code><pre style='color: red'>" + String(e) + "</pre></code>";
       info.value = "模块加载失败";
     })
@@ -179,11 +180,11 @@ def before_show():
       }
     },
   })
-  await pyodide.loadPackage("micropip", (msg) => {
+  await pyodide.loadPackage("micropip", (msg: any) => {
     info.value = msg.replaceAll("Loading ", "加载模块：");
   });
   if (matplotlib_draw_function.value) {
-    await pyodide.loadPackagesFromImports(preload_matplotlib_code, (msg) => {
+    await pyodide.loadPackagesFromImports(preload_matplotlib_code, (msg: any) => {
       info.value = msg.replaceAll("Loading ", "加载模块：");
     })
     info.value = "加载 matplotlib 绘制功能..."

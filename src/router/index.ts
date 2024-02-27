@@ -3,10 +3,11 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
 export const raw_routes = [
   { name: "index", alias: "/" },
   "file_sounds",
-  {
-    name: "在线 Python",
-    path: "python_online"
-  }, /*{
+  // {
+  //   name: "在线 Python",
+  //   path: "python_online"
+  // },
+   /*{
     path: "batch_file_renaming",
     name: "文件批量重命名"
   }*/, {
